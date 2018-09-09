@@ -1,0 +1,12 @@
+.cart-summary {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid $black;
+  border-radius: 10px;
+  line-height: 60px;
+  text-indent: 20px;
+  h6 {
+    padding-right: 20px;
+  }
+}

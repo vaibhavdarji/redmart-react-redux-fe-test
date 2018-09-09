@@ -1,0 +1,24 @@
+.btn {
+  border: 1px solid $black;
+  padding: 10px 20px;
+  margin: auto 10px;
+  font-size: $btn-font-size;
+  outline: 0;
+  cursor: pointer;
+  color: $black;
+  background: $container-bg-color;
+  &.btn-danger {
+    background: $btn-danger-bg-color;
+  }
+
+  &.no-mx {
+    margin: 10px 0;
+  }
+
+  &.btn-small {
+    outline: 0;
+    border: none;
+    color: rgba(0, 0, 0, 0.6);
+    border-radius: 0.28571429rem;
+  }
+}

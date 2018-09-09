@@ -1,0 +1,19 @@
+@import './scss/variables';
+@import './scss/button';
+@import './scss/cart';
+@import './scss/header';
+@import './scss/product';
+@import './scss/sidebar';
+@import './scss/flexbox';
+@import './scss/loader';
+
+* {
+  padding: 0;
+  margin: 0;
+  /*suppression des margin et padding de toutes les balises*/
+  box-sizing: border-box;
+  /* pour maîtriser width et flex-basis */
+  list-style: none;
+  /*suppression des puces*/
+  text-decoration: none;
+}

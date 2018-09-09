@@ -1,21 +1,48 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { Component, Fragment } from 'react';
+import ReduxToastr from 'react-redux-toastr';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
+import Header from './components/Header';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Fragment>
+        <ReduxToastr
+          timeOut={4000}
+          newestOnTop
+          preventDuplicates
+          position="top-center"
+          transitionIn="fadeIn"
+          transitionOut="fadeOut"
+        />
+        <div className="redmart-wrapper">
+          <Header />
+          {this.props.children}
+        </div>
+      </Fragment>
     );
   }
 }
 
-export default App;
+App.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ])
+};
+
+App.defaultProps = {
+  children: null
+};
+
+const mapStateToProps = state => ({});
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    {}
+  )(App)
+);
